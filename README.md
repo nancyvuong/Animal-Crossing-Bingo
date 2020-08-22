@@ -1,4 +1,4 @@
-# Animal-Crossing-Bingo
+# Animal Crossing Bingo
 A command line text-only (for now) bingo game featuring characters (villagers) from Animal Crossing: New Horizons.
 
 Animal Crossing: New Horizons is a video game on the Nintendo Switch. One of the things you can do in this game is create an island and recruit characters to live on your island. These characters are referred to as villagers and there are 397 unique villagers (though you can only have 10 villagers living on your island at a time). The most common way to recruit villagers is through a lottery system. There was a certain villager I was aiming for and spent more than 100 lottery rolls before I created this bingo game as a way to kill time and make the lottery rolls more enjoyable.
