@@ -23,4 +23,4 @@ PROJECT
 
 
 # `data`
-* `villagers.txt`: A text file containing names of all 397 villagers from Animal Crossing: New Horizons
+* `villagers.txt`: A text file containing names of all 397 villagers from Animal Crossing: New Horizons. If it has been deleted then running bingo.py will generate a new one.
