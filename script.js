@@ -1,32 +1,34 @@
 //first populate the squares with randomized pictures/names
 //create marked function which activates with onclick
-//extra randomized which repopulates squares and also 
+//extra randomized which repopulates squares and also
+//TEST CASE: make sure "" does not get into selected
+
+var lines; //contains the loaded villagers.txt file
 
 document.addEventListener("DOMContentLoaded", 
     function(event){
-        var selected = [];
         fetch('data/villagers.txt')
         .then(response => response.text())
         .then((data) => {
-            var lines = data.split('\n');
+            lines = data.split('\n');
             for(var line = 0; line < 9; line++){
-                //console.log(Math.floor(Math.random() * lines.length))
-                selected.push(lines[Math.floor(Math.random() * lines.length)]);
-                //selected.push(lines[line])
+                var squareid = "p" + line; 
+                //selected.push(lines[Math.floor(Math.random() * lines.length)]);
+                document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
               }
         })
-
-        console.log(selected);
-
-        function fill(){
-            for(var i = 0; i < selected.length; i++){
-                //document.getElementById().innerHTML = selected[i];
-            }
-        }
-
     }
 );
 
 function marked(squareid){
     document.getElementById(squareid).style.backgroundColor='black';
+}
+
+
+function filled(){
+    for(var line = 0; line < 9; line++){
+        var squareid = "p" + line; 
+        //selected.push(lines[Math.floor(Math.random() * lines.length)]);
+        document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
+      }
 }
