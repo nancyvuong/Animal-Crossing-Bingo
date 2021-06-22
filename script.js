@@ -106,6 +106,17 @@ function checkBingo(){
         
     }
     console.log(win);
-    return win;
-   
+    if (win){
+        var winWindow = window.open("", "", "width=200,height=100");
+        winWindow.document.write("<p>BINGO!</p>");
+
+        var timer = setInterval(function() {   
+            if(winWindow.closed) {  
+                clearInterval(timer);  
+                filled();
+                return;  
+            }  
+        }, 1000); 
+    }
+    return;
 }
