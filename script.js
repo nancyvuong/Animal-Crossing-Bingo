@@ -3,6 +3,7 @@
 //extra randomized which repopulates squares and also
 //TEST CASE: make sure "" does not get into selected
 
+var numMarked = 0;
 
 document.addEventListener("DOMContentLoaded", 
     function(event){
@@ -20,12 +21,21 @@ document.addEventListener("DOMContentLoaded",
 );
 
 function marked(squareid){
-    if(document.getElementById(squareid).style.backgroundColor=='yellow'){
+    if(document.getElementById(squareid).style.backgroundColor !='black'){
         document.getElementById(squareid).style.backgroundColor='black';
+        numMarked = numMarked + 1;
+        //console.log(numMarked);
     }
-    
+
     else{
-    document.getElementById(squareid).style.backgroundColor='yellow';
+        document.getElementById(squareid).style.backgroundColor='yellow';
+        numMarked = numMarked - 1;
+        //console.log(numMarked);
+
+    }
+
+    if (numMarked >= 3){
+        checkBingo();
     }
 }
 
@@ -46,4 +56,12 @@ function filled(){
             document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
         }
     })
+
+    numMarked = 0;
+}
+
+function checkBingo(){
+    //check horizontals
+    
+   
 }
