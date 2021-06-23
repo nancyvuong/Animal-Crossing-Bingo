@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded",
                 for(var lain = 0; lain < 3; lain++){
                     var squareid = "p" + line + lain;
                     //selected.push(lines[Math.floor(Math.random() * lines.length)]);
+                    var villager = lines[Math.floor(Math.random() * lines.length)];
+                    while (!villager){
+                        console.log("here");
+                        villager = lines[Math.floor(Math.random() * lines.length)];
+                    }
                     document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
               }
             }
@@ -58,6 +63,11 @@ function filled(){
             for(var lain = 0; lain < 3; lain++){
                 var squareid = "p" + line + lain; 
                 //selected.push(lines[Math.floor(Math.random() * lines.length)]);
+                var villager = lines[Math.floor(Math.random() * lines.length)];
+                while (!villager){
+                    console.log("here");
+                    villager = lines[Math.floor(Math.random() * lines.length)];
+                }
                 document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
             }
         }
