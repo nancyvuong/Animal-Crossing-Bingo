@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",
                         console.log("here");
                         villager = lines[Math.floor(Math.random() * lines.length)];
                     }
-                    document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
+                    document.getElementById(squareid).innerHTML = villager;
               }
             }
         })
@@ -68,7 +68,7 @@ function filled(){
                     console.log("here");
                     villager = lines[Math.floor(Math.random() * lines.length)];
                 }
-                document.getElementById(squareid).innerHTML = lines[Math.floor(Math.random() * lines.length)];
+                document.getElementById(squareid).innerHTML = villager;
             }
         }
     })
