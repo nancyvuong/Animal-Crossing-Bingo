@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded",
                     var squareid = "p" + line + lain;
                     //selected.push(lines[Math.floor(Math.random() * lines.length)]);
                     var villager = lines[Math.floor(Math.random() * lines.length)];
-                    while (!villager){
+                    while (!villager || villager === ""){
                         console.log("here");
+                        console.log(villager);
                         villager = lines[Math.floor(Math.random() * lines.length)];
                     }
                     document.getElementById(squareid).innerHTML = villager;
@@ -64,8 +65,9 @@ function filled(){
                 var squareid = "p" + line + lain; 
                 //selected.push(lines[Math.floor(Math.random() * lines.length)]);
                 var villager = lines[Math.floor(Math.random() * lines.length)];
-                while (!villager){
+                while (!villager || villager === ""){
                     console.log("here");
+                    console.log(villager);
                     villager = lines[Math.floor(Math.random() * lines.length)];
                 }
                 document.getElementById(squareid).innerHTML = villager;
