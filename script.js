@@ -7,6 +7,7 @@ var numMarked = 0;
 
 document.addEventListener("DOMContentLoaded", 
     function(event){
+        document.getElementById("banner").style.display = 'none';
         fetch('data/villagers.txt')
         .then(response => response.text())
         .then((data) => {
@@ -49,6 +50,8 @@ function marked(squareid){
 
 
 function filled(){
+    document.getElementById("bingo").style.display = 'block';
+    document.getElementById("banner").style.display = 'none';
     for (var i = 0; i < 3; i++){
         for(var j = 0; j < 3; j++){
             var squareid = "p"+i+j;
@@ -119,6 +122,7 @@ function checkBingo(){
     }
     console.log(win);
     if (win){
+        /*
         var winWindow = window.open("", "", "width=200,height=100");
         winWindow.document.write("<p>BINGO!</p>");
 
@@ -128,7 +132,13 @@ function checkBingo(){
                 filled();
                 return;  
             }  
-        }, 1000); 
-    }
+        }, 1000); */
+
+        document.getElementById("bingo").style.display = 'none';
+        document.getElementById("banner").style.display = 'block';
+
+    } 
+
+
     return;
 }
