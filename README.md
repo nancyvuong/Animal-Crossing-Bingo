@@ -19,8 +19,9 @@ PROJECT
 ```
 
 * `bingo.py`: The main code to create and run a bingo game
-* `villager_scraper.py`: A webscraper that scrapes `villagerdb.com` to collect all the names of the 397 villagers and writes them to `villagers.txt`
+* `villager_scraper.py`: A webscraper that scrapes `villagerdb.com` to collect all the names of the 397 villagers and writes them to `villagers.txt` Update 06/20/2021: `villager_scraper.py` no longer works on villagerdb.com
 
 
 # `data`
-* `villagers.txt`: A text file containing names of all 397 villagers from Animal Crossing: New Horizons. If it has been deleted then running bingo.py will generate a new one.
+* `villagers.txt`: A text file containing names of all 397 villagers from Animal Crossing: New Horizons. If it has been deleted then running bingo.py will generate a new one. 
+* Update 06/30/2021: Please do not delete this file as villagerdb.com has changed their website in a way that `villager_scrapper.py` no longer works
