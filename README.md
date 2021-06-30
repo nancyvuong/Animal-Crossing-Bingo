@@ -24,4 +24,4 @@ PROJECT
 
 # `data`
 * `villagers.txt`: A text file containing names of all 397 villagers from Animal Crossing: New Horizons. If it has been deleted then running bingo.py will generate a new one. 
-* Update 06/30/2021: Please do not delete this file as villagerdb.com has changed their website in a way that `villager_scrapper.py` no longer works
+* Update 06/30/2021: Please do not delete this folder as villagerdb.com has changed their website in a way that `villager_scrapper.py` no longer works
