@@ -8,7 +8,7 @@ var numMarked = 0;
 document.addEventListener("DOMContentLoaded", 
     function(event){
         document.getElementById("banner").style.display = 'none';
-        fetch('data/villagers.txt')
+        fetch('data/img_urls.txt')
         .then(response => response.text())
         .then((data) => {
             var lines = data.split('\n');
@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded",
                         console.log(villager);
                         villager = lines[Math.floor(Math.random() * lines.length)];
                     }
-                    document.getElementById(squareid).innerHTML = villager;
+                    //document.getElementById(squareid).innerHTML = villager;
+                    document.getElementById(squareid).style.backgroundImage = "url(" + villager + ")";
+
               }
             }
         })
@@ -30,16 +32,16 @@ document.addEventListener("DOMContentLoaded",
 );
 
 function marked(squareid){
-    if(document.getElementById(squareid).style.backgroundColor !='black'){
-        document.getElementById(squareid).style.backgroundColor='black';
+    if(document.getElementById(squareid).style.backgroundSize != "0px 0px"){
+        document.getElementById(squareid).style.backgroundSize = "0px 0px";
         numMarked = numMarked + 1;
-        //console.log(numMarked);
+        console.log(numMarked);
     }
 
     else{
-        document.getElementById(squareid).style.backgroundColor='yellow';
+        document.getElementById(squareid).style.backgroundSize = 'cover';
         numMarked = numMarked - 1;
-        //console.log(numMarked);
+        console.log(numMarked);
 
     }
 
@@ -49,17 +51,19 @@ function marked(squareid){
 }
 
 
+
+
 function filled(){
     document.getElementById("bingo").style.display = 'block';
     document.getElementById("banner").style.display = 'none';
     for (var i = 0; i < 3; i++){
         for(var j = 0; j < 3; j++){
             var squareid = "p"+i+j;
-            document.getElementById(squareid).style.backgroundColor='yellow';
+            document.getElementById(squareid).style.backgroundSize='cover';
         }
     }
 
-    fetch('data/villagers.txt')
+    fetch('data/img_urls.txt')
     .then(response => response.text())
     .then((data) => {
         var lines = data.split('\n');
@@ -73,13 +77,14 @@ function filled(){
                     console.log(villager);
                     villager = lines[Math.floor(Math.random() * lines.length)];
                 }
-                document.getElementById(squareid).innerHTML = villager;
+                document.getElementById(squareid).style.backgroundImage = "url(" + villager + ")";
             }
         }
     })
 
     numMarked = 0;
 }
+
 
 function checkBingo(){
     var win = false;
@@ -89,18 +94,18 @@ function checkBingo(){
         squareid = "p" + i;
 
         //check horizontals
-        if(document.getElementById(squareid+0).style.backgroundColor=='black' &&
-            document.getElementById(squareid+1).style.backgroundColor=='black' &&
-            document.getElementById(squareid+2).style.backgroundColor=='black')
+        if(document.getElementById(squareid+0).style.backgroundSize=='0px 0px' &&
+            document.getElementById(squareid+1).style.backgroundSize=='0px 0px' &&
+            document.getElementById(squareid+2).style.backgroundSize=='0px 0px')
         {
            win = true; 
            break; 
         }
 
         //check verticals
-        if(document.getElementById("p0"+i).style.backgroundColor=='black' &&
-            document.getElementById("p1"+i).style.backgroundColor=='black' &&
-            document.getElementById("p2"+i).style.backgroundColor=='black')
+        if(document.getElementById("p0"+i).style.backgroundSize=='0px 0px' &&
+            document.getElementById("p1"+i).style.backgroundSize=='0px 0px' &&
+            document.getElementById("p2"+i).style.backgroundSize=='0px 0px')
         {
            win = true; 
            break; 
@@ -108,12 +113,12 @@ function checkBingo(){
 
         //check diagonals
         if(win == false){
-            if(document.getElementById("p11").style.backgroundColor=='black'){
-                if (!(win = (document.getElementById("p00").style.backgroundColor=='black') &&
-                (document.getElementById("p22").style.backgroundColor=='black'))){
+            if(document.getElementById("p11").style.backgroundSize=='0px 0px'){
+                if (!(win = (document.getElementById("p00").style.backgroundSize=='0px 0px') &&
+                (document.getElementById("p22").style.backgroundSize=='0px 0px'))){
                     
-                    win = (document.getElementById("p02").style.backgroundColor=='black') &&
-                    (document.getElementById("p20").style.backgroundColor=='black')
+                    win = (document.getElementById("p02").style.backgroundSize=='0px 0px') &&
+                    (document.getElementById("p20").style.backgroundSize=='0px 0px')
                 }
             }
         }
@@ -122,18 +127,6 @@ function checkBingo(){
     }
     console.log(win);
     if (win){
-        /*
-        var winWindow = window.open("", "", "width=200,height=100");
-        winWindow.document.write("<p>BINGO!</p>");
-
-        var timer = setInterval(function() {   
-            if(winWindow.closed) {  
-                clearInterval(timer);  
-                filled();
-                return;  
-            }  
-        }, 1000); */
-
         document.getElementById("bingo").style.display = 'none';
         document.getElementById("banner").style.display = 'block';
 
@@ -142,3 +135,4 @@ function checkBingo(){
 
     return;
 }
+
