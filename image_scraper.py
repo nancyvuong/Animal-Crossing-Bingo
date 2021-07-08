@@ -2,6 +2,7 @@ import requests
 import os
 from requests import get
 from bs4 import BeautifulSoup
+import json
 
 def scrape():
     """
@@ -19,6 +20,7 @@ def scrape():
         lines = [line.rstrip() for line in f]
 
     url = "https://villagerdb.com/villager/"
+    yuarelle = "https://villagerdb.com"
 
     for villager in lines:
         villager = villager.replace(" ", "-").replace("'", "").replace(".", "")
@@ -33,7 +35,13 @@ def scrape():
                 villager_url = url + "renee"
                 req = requests.get(villager_url)
         soup = BeautifulSoup(req.content, 'html.parser')
-        image_lst.append(str(soup.find_all('meta', property="og:image")[0]).split('"')[1])
+        for i in soup.find_all('div'):
+            curr = str(i.get('data-image'))
+            if curr != "None":
+                #print(curr)
+                break
+        diction = json.loads(curr)
+        image_lst.append(yuarelle + diction['full'])
     return image_lst
 
 def create_txt(villager_list):
