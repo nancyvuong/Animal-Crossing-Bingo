@@ -10,6 +10,7 @@ h1{
     color: #f3bb01;
     text-align: center;
     background-color:#5d421c;
+    border-radius: 25px;
     
 }
 
@@ -17,13 +18,25 @@ h1{
     position: relative;
 }
 
-#bingo, #banner{
+#bingo{
     margin: auto;
     height: 500px;
     width: 500px;
     background-color: #a78963;
     text-align: center;
     font-size: xx-large;
+    border-radius: 25px;
+}
+
+#banner{
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    background-color: #a78963;
+    text-align: center;
+    font-size: xxx-large;
+    border-radius: 25px;
+    line-height: 500px;
 }
 
 
@@ -47,5 +60,6 @@ h1{
     padding: 10% 5%;
     text-align: center;
     background-size: cover;
-    background-color: white;
+    background-color: #FEFFEC;
+    border-radius: 25px;
 }
