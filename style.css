@@ -32,11 +32,8 @@ h1{
     margin: auto;
     height: 500px;
     width: 500px;
-    background-color: #a78963;
-    text-align: center;
-    font-size: xxx-large;
     border-radius: 25px;
-    line-height: 500px;
+    background-image: url("images/BINGO.png");
 }
 
 
