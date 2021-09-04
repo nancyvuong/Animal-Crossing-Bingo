@@ -15,14 +15,18 @@ PROJECT
 ├── README.md
 ├── data
 │   ├── villagers.txt
+│   ├── img_urls.txt
 ├── bingo.py
 ├── villager_scraper.py
+├── image_scraper.py
 ```
 
 * `bingo.py`: The main code to create and run a bingo game
-* `villager_scraper.py`: A webscraper that scrapes `villagerdb.com` to collect all the names of the 391 villagers and writes them to `villagers.txt` Update 06/20/2021: `villager_scraper.py` no longer works on villagerdb.com
+* `villager_scraper.py`: A webscraper that scrapes `villagerdb.com` to collect all the names of the 391 villagers and writes them to `villagers.txt` Update 06/20/2021: `villager_scraper.py` no longer works on `villagerdb.com`.
+* `image_scraper.py`: A webscraper that scraps `villagerdb.com` to collect the url source of the images of all 391 villagers and writes them to `img_urls.txt`. Because `villager_scraper.py` no longer works with `villagerdb.com`, `image_scraper.py` is reliant on `villagers.txt`.
 
 
 # `data`
 * `villagers.txt`: A text file containing names of all 391 villagers from Animal Crossing: New Horizons. If it has been deleted then running bingo.py will generate a new one. 
 * Update 06/30/2021: Please do not delete this folder as villagerdb.com has changed their website in a way that `villager_scrapper.py` no longer works
+* `img_urls.txt`: A text file containing the url sources of all 391 villagers that gets displayed on the web version of this bingo game.
